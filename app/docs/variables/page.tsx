@@ -3,25 +3,25 @@ import { Variable } from "lucide-react"
 export default function VariablesPage() {
   return (
     <div className="max-w-3xl">
-      <h1 className="text-3xl font-bold mb-6">SASS Variables</h1>
+      <h1 className="text-3xl font-bold mb-6">Sundarcss Variables</h1>
 
       <div className="space-y-8">
         <section>
           <h2 className="text-2xl font-semibold mb-4">Overview</h2>
           <p className="text-muted-foreground mb-4">
-            The library uses SASS variables to maintain consistency across the codebase and make customization easier.
-            These variables control everything from colors and spacing to grid settings and typography.
+            Our  library Sundarcss  uses SASS variables to maintain consistency across the codebase and make customization easier.
+            These variables control everything from colors and spacing to grid settings and many more .
           </p>
 
           <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
             <Variable className="h-4 w-4" />
-            <span>All variables are defined at the top of the SASS file and can be customized.</span>
+            <span>These variables are defined at the top of the SASS file and can be customized.</span>
           </div>
         </section>
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Grid Variables</h2>
-          <p className="text-muted-foreground mb-4">Variables that control the grid system.</p>
+          <p className="text-muted-foreground mb-4"> These Variables  Control the grid system.</p>
 
           <pre className="bg-muted p-4 rounded-md overflow-x-auto">
             <code>{`$grid-columns: 12;
@@ -45,8 +45,7 @@ $breakpoints: (
                 1rem)
               </li>
               <li>
-                <code className="bg-muted px-1 py-0.5 rounded">$breakpoints</code>: Map of breakpoint names to their
-                pixel values
+                <code className="bg-muted px-1 py-0.5 rounded">$breakpoints</code>:  Breakpoint define the neames of their pixel values 
               </li>
             </ul>
           </div>
@@ -54,7 +53,7 @@ $breakpoints: (
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Color Variables</h2>
-          <p className="text-muted-foreground mb-4">Variables that define the color palette.</p>
+          <p className="text-muted-foreground mb-4">These define the color-</p>
 
           <pre className="bg-muted p-4 rounded-md overflow-x-auto">
             <code>{`$colors: (
@@ -71,16 +70,16 @@ $breakpoints: (
 
           <div className="mt-4 text-sm text-muted-foreground">
             <p>
-              The <code className="bg-muted px-1 py-0.5 rounded">$colors</code> map contains key-value pairs of color
+              The <code className="bg-muted px-1 py-0.5 rounded">$colors</code> This  contains key-value pairs of color
               names and their hex values. These colors are used throughout the library for text, backgrounds, and other
-              UI elements.
+              UI elements (easy to use and simple naming convention).
             </p>
           </div>
         </section>
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Spacing Variables</h2>
-          <p className="text-muted-foreground mb-4">Variables that control spacing throughout the UI.</p>
+          <p className="text-muted-foreground mb-4"> control spacing throughout the UI.</p>
 
           <pre className="bg-muted p-4 rounded-md overflow-x-auto">
             <code>{`$spacer: 1rem;
@@ -100,7 +99,7 @@ $spacers: (
                 <code className="bg-muted px-1 py-0.5 rounded">$spacer</code>: Base spacing unit (default: 1rem)
               </li>
               <li>
-                <code className="bg-muted px-1 py-0.5 rounded">$spacers</code>: Map of spacing scale values used for
+                <code className="bg-muted px-1 py-0.5 rounded">$spacers</code>: Spacing scale values used for
                 margin, padding, and gap utilities
               </li>
             </ul>
@@ -165,11 +164,11 @@ $font-sizes: (
           </p>
 
           <pre className="bg-muted p-4 rounded-md overflow-x-auto">
-            <code>{`// _custom-variables.scss
-$grid-columns: 24; // Change to 24-column grid
-$spacer: 0.8rem; // Smaller base spacing unit
+            <code>{` 
+$grid-columns: 24;  
+$spacer: 0.8rem; 
 $colors: (
-  'primary': #6200ee, // Custom primary color
+  'primary': #6200ee,  
   'secondary': #03dac6,
   'success': #28a745,
   'danger': #dc3545,
@@ -178,9 +177,7 @@ $colors: (
   'light': #f8f9fa,
   'dark': #121212
 );
-
-// Import the library after defining custom variables
-@import 'sass-utility-library';`}</code>
+ `}</code>
           </pre>
 
           <div className="mt-4 text-sm text-muted-foreground">

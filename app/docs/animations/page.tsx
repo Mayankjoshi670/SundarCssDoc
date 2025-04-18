@@ -31,21 +31,24 @@ export default function AnimationsPage() {
               <TabsItem value="code">Code</TabsItem>
             </TabsList>
             <TabsContent value="example">
-              <div className="p-4 border rounded-md space-y-4">
-                <div>
-                  <div className="text-sm mb-2">.transition (0.3s)</div>
-                  <button className="bg-primary/10 p-2 rounded transition hover:bg-primary/30">Hover me</button>
-                </div>
-                <div>
-                  <div className="text-sm mb-2">.transition-fast (0.15s)</div>
-                  <button className="bg-primary/10 p-2 rounded transition-fast hover:bg-primary/30">Hover me</button>
-                </div>
-                <div>
-                  <div className="text-sm mb-2">.transition-slow (0.5s)</div>
-                  <button className="bg-primary/10 p-2 rounded transition-slow hover:bg-primary/30">Hover me</button>
-                </div>
-              </div>
-            </TabsContent>
+  <div className="p-4 border rounded-md space-y-4">
+    <div>
+      <div className="text-sm mb-2">.transition (0.3s)</div>
+      <button className="bg-primary/10 p-2 rounded transition duration-300 hover:bg-primary/30">Hover me</button>
+    </div>
+    <div>
+      <div className="text-sm mb-2">.transition-fast (0.5s)</div>
+      <button className="bg-primary/10 p-2 rounded transition duration-500 hover:bg-primary/30">Hover me</button>
+    </div>
+    <div>
+      <div className="text-sm mb-2">.transition-slow (1s)</div>
+      <button className="bg-primary/10 p-2 rounded transition duration-1000 hover:bg-primary/30">Hover me</button>
+    </div>
+  </div>
+</TabsContent>
+
+
+
             <TabsContent value="code">
               <pre className="bg-muted p-4 rounded-md overflow-x-auto">
                 <code>{`$transition-speed: 0.3s;
@@ -62,6 +65,11 @@ export default function AnimationsPage() {
   transition: all 0.5s ease-in-out !important;
 }`}</code>
               </pre>
+
+
+
+
+
             </TabsContent>
           </Tabs>
         </section>
@@ -76,21 +84,55 @@ export default function AnimationsPage() {
               <TabsItem value="code">Code</TabsItem>
             </TabsList>
             <TabsContent value="example">
-              <div className="p-4 border rounded-md space-y-4">
-                <div>
-                  <div className="text-sm mb-2">.animate-fade-in</div>
-                  <div className="bg-primary/10 p-4 rounded animate-fade-in">Fades in</div>
-                </div>
-                <div>
-                  <div className="text-sm mb-2">.animate-slide-up</div>
-                  <div className="bg-primary/10 p-4 rounded animate-slide-up">Slides up</div>
-                </div>
-                <div>
-                  <div className="text-sm mb-2">.animate-slide-down</div>
-                  <div className="bg-primary/10 p-4 rounded animate-slide-down">Slides down</div>
-                </div>
-              </div>
-            </TabsContent>
+  <style>
+    {`
+      @keyframes fade-in {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      @keyframes slide-up {
+        0% { transform: translateY(20px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+      }
+      @keyframes slide-down {
+        0% { transform: translateY(-20px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+      }
+
+      .hover-fade-in:hover {
+        animation: fade-in 0.5s ease-out;
+      }
+      .hover-slide-up:hover {
+        animation: slide-up 0.5s ease-out;
+      }
+      .hover-slide-down:hover {
+        animation: slide-down 0.5s ease-out;
+      }
+    `}
+  </style>
+  
+  <div className="p-4 border rounded-md space-y-4">
+    <div>
+      <div className="text-sm mb-2">.animate-fade-in</div>
+      <div className="bg-primary/10 p-4 rounded hover-fade-in">
+        Hover to fade in
+      </div>
+    </div>
+    <div>
+      <div className="text-sm mb-2">.animate-slide-up</div>
+      <div className="bg-primary/10 p-4 rounded hover-slide-up">
+        Hover to slide up
+      </div>
+    </div>
+    <div>
+      <div className="text-sm mb-2">.animate-slide-down</div>
+      <div className="bg-primary/10 p-4 rounded hover-slide-down">
+        Hover to slide down
+      </div>
+    </div>
+  </div>
+</TabsContent>
+
             <TabsContent value="code">
               <pre className="bg-muted p-4 rounded-md overflow-x-auto">
                 <code>{`@keyframes fade-in {
@@ -300,22 +342,29 @@ export default function AnimationsPage() {
               <TabsItem value="example">Example</TabsItem>
               <TabsItem value="code">Code</TabsItem>
             </TabsList>
-            <TabsContent value="example">
-              <div className="p-4 border rounded-md space-y-4">
-                <div>
-                  <div className="text-sm mb-2">.hover-zoom</div>
-                  <div className="bg-primary/10 p-4 rounded inline-block hover-zoom">Hover to zoom</div>
-                </div>
-                <div>
-                  <div className="text-sm mb-2">.hover-shadow</div>
-                  <div className="bg-primary/10 p-4 rounded inline-block hover-shadow">Hover for shadow</div>
-                </div>
-                <div>
-                  <div className="text-sm mb-2">.hover-animate-bounce</div>
-                  <div className="bg-primary/10 p-4 rounded inline-block hover-animate-bounce">Hover to bounce</div>
-                </div>
-              </div>
-            </TabsContent>
+           <TabsContent value="example">
+  <div className="p-4 border rounded-md space-y-4">
+    <div>
+      <div className="text-sm mb-2">.hover-zoom</div>
+      <div className="bg-primary/10 p-4 rounded inline-block transform transition-transform duration-300 hover:scale-110">
+        Hover to zoom
+      </div>
+    </div>
+    <div>
+      <div className="text-sm mb-2">.hover-shadow</div>
+      <div className="bg-primary/10 p-4 rounded inline-block transition-shadow duration-300 hover:shadow-lg">
+        Hover for shadow
+      </div>
+    </div>
+    <div>
+      <div className="text-sm mb-2">.hover-animate-bounce</div>
+      <div className="bg-primary/10 p-4 rounded inline-block transition-transform duration-300 hover:animate-bounce">
+        Hover to bounce
+      </div>
+    </div>
+  </div>
+</TabsContent>
+
             <TabsContent value="code">
               <pre className="bg-muted p-4 rounded-md overflow-x-auto">
                 <code>{`.hover-zoom {
